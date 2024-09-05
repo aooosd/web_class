@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <title>주사위 굴리기</title>
+    <style>
+        * {
+            font-family: 굴림, sans-serif;
+            text-align: center;
+        }
+
+        #dice {
+            height: 100px;
+            width: 500px;
+            margin: 10px auto;
+            background-color: lightgray;
+            border: 1px solid black;
+            border-radius: 10px;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+    <script>
+        function roll() {
+           let b = Math.random()
+           b = Math.ceil(b*100)
+           if (b >= 0 && b <= 30){
+            document.getElementById("dice").innerHTML = '일격필살!'
+           }
+           else {
+            document.getElementById("dice").innerHTML = '상대에게는 맞지 않았다!'
+           }
+
+         //
+        };
+    </script>
+</head>
+
+<body>
+    <h3>적 hp : 200</h3>
+    <p id="dice"> </p>
+    <button onclick="roll()">땅가르기</button>
+</body>
+
+</html>
