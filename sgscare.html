@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +8,20 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            transition: background-color 0.5s; /* 배경 색상 변화를 부드럽게 */
+        }
+
+        .cb {
+            background-color: white;
+            color: black;
+            padding: 2vh;
+            margin: 20vh;
+        }
+        .cb:hover {
+            background-color: gray;
+            color: black;
+            padding: 2vh;
+            margin: 20vh;
         }
 
         .container {
@@ -18,7 +33,7 @@
         }
 
         .text {
-            font-size: 24px;
+            font-size: 60px;
             font-weight: bold;
             color: black;
             position: relative;
@@ -72,33 +87,40 @@
         <label>
             <input type="checkbox" id="text-checkbox"> Yes
         </label>
-        <input type="button" value="Next" class="cb" onclick="makeBleed()">
+        <input type="button" id="fake" value="Next" class="cb" onclick="makeBleed()">
     </div>
 
     <script>
         function makeBleed() {
-            let checkVal = document.getElementById("text-checkbox").value
-            if (checkVal == true){
-            const textElement = document.getElementById('title');
-            textElement.classList.add('bleeding');
+            let checkVal = document.getElementById("text-checkbox");
+            if (checkVal.checked){
+                const textElement = document.getElementById('title');
+                textElement.classList.add('bleeding');
 
-            // 피 효과 추가
-            for (let i = 0; i < 5; i++) { // 여러 개의 피 방울 생성
-                const blood = document.createElement('div');
-                blood.classList.add('blood');
-                blood.style.left = `${50 + (Math.random() * 10 - 5)}%`; // 랜덤 위치
-                blood.style.width = `${5 + Math.random() * 10}px`; // 랜덤 크기
-                blood.style.height = blood.style.width;
+                // 피 효과 추가
+                for (let i = 0; i < 5; i++) { // 여러 개의 피 방울 생성
+                    const blood = document.createElement('div');
+                    blood.classList.add('blood');
+                    blood.style.left = `${50 + (Math.random() * 10 - 5)}%`; // 랜덤 위치
+                    blood.style.width = `${5 + Math.random() * 10}px`; // 랜덤 크기
+                    blood.style.height = blood.style.width;
 
-                // 텍스트 아래에 피 방울 표시
-                textElement.appendChild(blood);
+                    // 텍스트 아래에 피 방울 표시
+                    textElement.appendChild(blood);
 
-                // 피 방울 제거
-                setTimeout(() => {
-                    blood.remove();
-                }, 3000); // 애니메이션 시간 이후 제거
+                    // 피 방울 제거
+                    setTimeout(() => {
+                        blood.remove();
+                    }, 3000); // 애니메이션 시간 이후 제거
+                }
+
+                
+                // 배경 색상 변경 (흰색에서 검정색으로)
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white"; // 텍스트 색상도 흰색으로 변경
+
+                const next = document.createElement('');
             }
-        }
         }
     </script>
 </body>
