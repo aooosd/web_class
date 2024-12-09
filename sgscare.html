@@ -12,6 +12,8 @@
         }
 
         .cb {
+            width: 20%;
+            height: 100%;
             background-color: white;
             color: black;
             padding: 2vh;
@@ -93,9 +95,11 @@
     <script>
         function makeBleed() {
             let checkVal = document.getElementById("text-checkbox");
+            const btn = document.getElementById("fake");
             if (checkVal.checked){
                 const textElement = document.getElementById('title');
                 textElement.classList.add('bleeding');
+                fake.value = "*$@&*%^&?^(&$"
 
                 // 피 효과 추가
                 for (let i = 0; i < 5; i++) { // 여러 개의 피 방울 생성
@@ -119,10 +123,9 @@
                 document.body.style.backgroundColor = "black";
                 document.body.style.color = "white"; // 텍스트 색상도 흰색으로 변경
 
-                const next = document.createElement('');
+                
             }
         }
     </script>
 </body>
 </html>
-
