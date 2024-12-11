@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 50px;
+        }
+
+        .container .Checking {
+            display: block;
+        }
+        .text {
+            font-size: 60px;
+            font-weight: bold;
+            color: black;
+            position: relative;
+            overflow: hidden;
+        }
+        a {
+            outline-color: black;
+            border-color: black;
+            background-color: white;
+            color: rgb(173, 0, 0);
+        }
+
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text" id="title">Would you start this survey?</h1>
+        <div class="Checking">
+        <label id="a">
+            <input type="checkbox" id="text-checkbox_Yes"> Yes
+        </label>
+        <label id="c">
+            <input type="checkbox" id="text-checkbox_No"> No
+        </label>
+    </div>
+        <button id="np" onclick="Gotonext()">
+            <a href="" id="f">hi</a>
+        </button>   
+        <a id="next"></a>   
+    </div>
+
+    <script>
+        const acc = document.getElementById("text-checkbox_Yes");
+        const rej = document.getElementById("text-checkbox_No");
+        const Next = document.getElementById("f");
+        function Gotonext() {
+            if (acc.checked)
+            Next.href = "sgscare.html";
+        }
+    </script>
+</body>
+</html>
+
