@@ -73,6 +73,10 @@
         .strange {
             color: red;
         }
+        a {
+            color: red;
+            text-decoration-line: line-through;
+        }
 
         @keyframes drip {
             0% {
@@ -88,16 +92,18 @@
 </head>
 <body>
     <div class="container">
-        <h1 class="text" id="title">Do you accept this suggestion?</h1>
+        <h1 class="text" id="title">Do you accept the suggestion?</h1>
         <label>
             <input type="checkbox" id="text-checkbox"> Yes
         </label>
         <input type="button" id="fake" value="Next" class="cb" onclick="makeBleed()">
+        <a id="gon" href=""></a>
     </div>
 
     <script>
         function makeBleed() {
-            let checkVal = document.getElementById("text-checkbox");
+            const checkVal = document.getElementById("text-checkbox");
+            const gggg = document.getElementById("gon");
             if (checkVal.checked){
 
                 const textElement = document.getElementById('title');
@@ -128,8 +134,11 @@
                 document.body.style.color = "white"; // 텍스트 색상도 흰색으로 변경
 
                 
+                gggg.href = "sgscare2.html";
+                gggg.innerHTML = "NEXT";
             }
         }
     </script>
 </body>
 </html>
+
