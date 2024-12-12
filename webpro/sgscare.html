@@ -20,8 +20,7 @@
             margin: 20vh;
         }
         .cb:hover {
-            background-color: gray;
-            color: black;
+            background-color: rgb(172, 172, 172);
             padding: 2vh;
             margin: 20vh;
         }
@@ -71,6 +70,10 @@
             opacity: 0.8;
         }
 
+        .strange {
+            color: red;
+        }
+
         @keyframes drip {
             0% {
                 transform: translate(-50%, -100%);
@@ -95,11 +98,12 @@
     <script>
         function makeBleed() {
             let checkVal = document.getElementById("text-checkbox");
-            const btn = document.getElementById("fake");
             if (checkVal.checked){
+
                 const textElement = document.getElementById('title');
                 textElement.classList.add('bleeding');
                 fake.value = "*$@&*%^&?^(&$"
+                fake.classList.add('strange');
 
                 // 피 효과 추가
                 for (let i = 0; i < 5; i++) { // 여러 개의 피 방울 생성
@@ -129,4 +133,3 @@
     </script>
 </body>
 </html>
-
