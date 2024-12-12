@@ -15,7 +15,7 @@
             background-color: white;
             color: black;
             padding: 2vh;
-            margin-top: 30vh;
+            margin-top: 10vh;
             border-radius: 20%;
         }
 
@@ -36,7 +36,6 @@
         }
         a {
             border-color: black;
-            background-color: white;
             color: rgb(173, 0, 0);
         }
 
@@ -57,8 +56,12 @@
         let count = 5;
         let seecnt = document.getElementById('see');
         seecnt.innerHTML = count + " left";
+        let light = true;
+        let end = false;
 
         function turnOff() {
+            if (light == true && end == false){
+                light = false;
             if (count > 0){
                 document.body.style.backgroundColor = "black";
                 document.body.style.color = "white"; // 텍스트 색상도 흰색으로 변경
@@ -70,17 +73,24 @@
                 document.body.style.color = "white"; // 텍스트 색상도 흰색으로 변경
             }
             setTimeout(()=>turnOn(),4000);
+            }
         }
         function turnOn() {
+            if (light == false)
+        {
             if (count == 0){
                 const link = document.getElementById("next");
                 link.href="sgscare.html";
                 link.innerHTML = "Next";
+                count++;
+                end = true;
             }
             document.body.style.backgroundColor = "white";
             document.body.style.color = "white"; // 텍스트 색상도 흰색으로 변경
             count--;
             seecnt.innerHTML = count + " left";
+            light = true;
+        }
         }
         function NextPage() {
 
@@ -88,4 +98,3 @@
     </script>
 </body>
 </html>
-
